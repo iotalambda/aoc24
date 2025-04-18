@@ -1,4 +1,4 @@
-use anyhow::{Ok, Result, Context};
+use anyhow::{Ok, Result};
 use std::fs;
 
 fn main() -> Result<()> {
@@ -8,13 +8,10 @@ fn main() -> Result<()> {
         .lines()
         .map(|line| line
             .split_ascii_whitespace()
-            .map(|v| v
-                .parse::<i32>()
-                .with_context(|| format!("Bad number: {v}"))
-            )
-            .collect::<Result<_>>()
+            .map(|v| v.parse::<i32>())
+            .collect::<Result<_, _>>()
         )
-        .collect::<Result<_>>()?;
+        .collect::<Result<_, _>>()?;
 
     let safe = records
         .iter()
