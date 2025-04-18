@@ -2,7 +2,7 @@ use anyhow::{Ok, Result, Context};
 use std::fs;
 
 fn main() -> Result<()> {
-    let input = fs::read_to_string("src/bin/d2a1/input")?;
+    let input = fs::read_to_string("input")?;
 
     let records: Vec<Vec<i32>> = input
         .lines()
@@ -21,7 +21,7 @@ fn main() -> Result<()> {
         .filter(|r| is_safe(r))
         .count();
 
-    fs::write("src/bin/d2a2/output", format!("{safe}"))?;
+    fs::write("output", format!("{safe}"))?;
 
     Ok(())
 }

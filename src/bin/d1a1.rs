@@ -2,7 +2,7 @@ use anyhow::{Ok, Result, Context};
 use std::fs;
 
 fn main() -> Result<()> {
-    let input = fs::read_to_string("src/bin/d1a1/input")?;
+    let input = fs::read_to_string("input")?;
 
     let mut col1 = Vec::<u32>::new();
     let mut col2 = Vec::<u32>::new();
@@ -21,7 +21,7 @@ fn main() -> Result<()> {
         .map(|(v1, v2)| (*v1).abs_diff(*v2))
         .sum::<u32>();
 
-    fs::write("src/bin/d1a1/output", format!("{result}"))?;
+    fs::write("output", format!("{result}"))?;
 
     Ok(())
 }

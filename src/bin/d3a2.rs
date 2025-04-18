@@ -3,7 +3,7 @@ use std::fs;
 use anyhow::{anyhow, Context, Ok, Result};
 
 fn main() -> Result<()> {
-    let input = fs::read_to_string("src/bin/d3a1/input")?;
+    let input = fs::read_to_string("input")?;
 
     let joined = input.lines()
         .collect::<String>();
@@ -16,7 +16,7 @@ fn main() -> Result<()> {
         .map(mul_sum)
         .sum::<i32>();
 
-    fs::write("src/bin/d3a2/output", format!("{result}"))?;
+    fs::write("output", format!("{result}"))?;
 
     Ok(())
 }

@@ -2,7 +2,7 @@ use anyhow::{Ok, Result, Context};
 use std::fs;
 
 fn main() -> Result<()> {
-    let input = fs::read_to_string("src/bin/d2a1/input")?;
+    let input = fs::read_to_string("input")?;
     let mut records = Vec::<Vec<i32>>::new();
     for line in input.lines() {
         let mut levels = Vec::<i32>::new();
@@ -34,7 +34,7 @@ fn main() -> Result<()> {
         safe += 1;
     }
 
-    fs::write("src/bin/d2a1/output", format!("{safe}"))?;
+    fs::write("output", format!("{safe}"))?;
 
     Ok(())
 }
